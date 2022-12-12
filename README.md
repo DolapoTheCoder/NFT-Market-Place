@@ -1,13 +1,30 @@
-# Sample Hardhat Project
+# NFT Market Place
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+This project is a NFT MarketPlace it uses: React; Solidity; Hardhat and other technologies.
 
-Try running some of the following tasks:
+Start by running:
 
 ```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
+    git clone https://github.com/DolapoTheCoder/NFT-Market-Place.git
+```
+
+after that run this to install dependencies
+
+```shell
+   cd nftmarketplace
+   npm install
+```
+
+Then use this command to run on your local machine
+
+```shell
+    npm run start
+```
+
+Make sure you have the MetaMask google extension installed, Make sure your point to the correct network.
+
+```shell
+     ENJOY
+      THE
+  MARKETPLACE!
 ```
