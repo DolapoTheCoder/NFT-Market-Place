@@ -1,13 +1,13 @@
 import React from 'react';
 import { Navbar, Nav, Container, Button} from 'react-bootstrap';
-
+import './MenuBar.css'
 
 const MenuBar = () => {
   return (
     <Navbar bg="dark" variant="dark">
         <Container>
             <Navbar.Brand href="#home">
-                NFT Market Place
+                <header>DeCentralHub Market Place</header>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
