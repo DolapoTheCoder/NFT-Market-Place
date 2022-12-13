@@ -7,7 +7,7 @@ const MenuBar = () => {
     <Navbar bg="dark" variant="dark">
         <Container>
             <Navbar.Brand href="#home">
-                <header>DeCentralHub Market Place</header>
+                DeCentralHub Market Place
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
