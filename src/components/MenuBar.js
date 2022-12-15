@@ -1,6 +1,7 @@
 import React from 'react';
-import { Navbar, Nav, Container, Button} from 'react-bootstrap';
-import './MenuBar.css'
+import { Navbar, Nav, Container } from 'react-bootstrap';
+import './MenuBar.css';
+import MetaMaskConnection from './MetaMaskConnection';
 
 const MenuBar = () => {
   return (
@@ -15,7 +16,7 @@ const MenuBar = () => {
                     <Nav.Link href="#home">Home</Nav.Link>
                     <Nav.Link href="#link">Link</Nav.Link>
                 </Nav>
-                <Button variant='secondary'>Connect Wallet</Button>
+                <MetaMaskConnection/>
             </Navbar.Collapse>
         </Container>
     </Navbar>
