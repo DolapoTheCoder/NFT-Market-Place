@@ -12,11 +12,11 @@ const MetaMaskConnection = () => {
 
   const connectWallet = async () => {
     if(window.ethereum) {
-      const accounts = await window.ethereum.request({
-        method:"eth_requestAccounts"
-      });
-      setUser(accounts);
-      
+      const accounts = await window.ethereum.request({method:"eth_requestAccounts"});
+      setUser(accounts[0]);
+      let balance = await window.ethereum.request({method: 'eth_getBalance', params: [accounts[0], 'latest']})
+      balance = Math.round(ethers.utils.formatEther(balance) * 1e4) / 1e4;      
+      setBalance(balance);      
     } else {
       window.alert("Please download MetaMask wallet.")
     }
@@ -33,7 +33,7 @@ const MetaMaskConnection = () => {
               {user}
             </Navbar.Brand>
             <Navbar.Brand>
-              Balance:
+              Balance: {balance}
             </Navbar.Brand>
           </>
         )
