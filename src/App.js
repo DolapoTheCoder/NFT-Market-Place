@@ -2,6 +2,7 @@ import './App.css';
 import MenuBar from './components/MenuBar';
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, Move, Sticky } from "react-scroll-motion";
 import Test from './components/Test';
+import Home from './components/Home';
 
 function App() {
   const FadeUp = batch(Fade(), Move(), Sticky());
@@ -12,7 +13,7 @@ function App() {
         <ScrollContainer>
           <ScrollPage>
             <Animator animation={FadeUp}>
-              <header>NFT Market Place!</header>
+              <Home/>
             </Animator>
           </ScrollPage>
           <ScrollPage>

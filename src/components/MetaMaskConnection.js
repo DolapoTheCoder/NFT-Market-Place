@@ -33,7 +33,7 @@ const MetaMaskConnection = () => {
               {user}
             </Navbar.Brand>
             <Navbar.Brand>
-              Balance: {balance}
+              Balance: {balance} ETH
             </Navbar.Brand>
           </>
         )
