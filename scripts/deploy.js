@@ -1,15 +1,31 @@
 const { ethers } = require("hardhat");
+const hre = require("hardhat");
+const fs = require("fs");
 
 async function main() {
-    const NFTMarketPlace = await ethers.getContractFactory("NFTMarketplace");
+  //get the signer that we will use to deploy
+  const [deployer] = await ethers.getSigners();
+  
+  //Get the NFTMarketplace smart contract object and deploy it
+  const NFTMarketplace = await ethers.getContractFactory("NFTMarketplace");
+  const nftmarketplace = await NFTMarketplace.deploy();
 
-    const nft_market_place = await NFTMarketPlace.deploy();
-    console.log("Contract deployed to address:", nft_market_place.address);
+  await nftmarketplace.deployed();
+  
+  //Pull the address and ABI out while you deploy, since that will be key in interacting with the smart contract later
+  const data = {
+    address: nftmarketplace.address,
+    abi: JSON.parse(nftmarketplace.interface.format('json'))
+  }
+
+  //This writes the ABI and address to the nftmarketplace.json
+  //This data is then used by frontend files to connect with the smart contract
+  fs.writeFileSync('./src/NFTMarketplace.json', JSON.stringify(data))
 }
 
 main()
-    .then(() => process.exit(0))
-    .catch(error => {
-        console.error(error);
-        process.exit(1);
-    });
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
