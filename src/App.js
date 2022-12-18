@@ -1,7 +1,7 @@
 import './App.css';
 import MenuBar from './components/MenuBar';
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, Move, Sticky } from "react-scroll-motion";
-import Test from './components/Test';
+import ListNft from './components/ListNft';
 import Home from './components/Home';
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
             </Animator>
           </ScrollPage>
           <ScrollPage>
-              <Test/>
+              <ListNft/>
           </ScrollPage>
         </ScrollContainer>
       </div>
