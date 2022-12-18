@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { uploadJSONToIPFS, uploadFileToIPFS } from './Pinata';
 import NFTMarketplace from '../NFTMarketplace.json';
 //import {useLocation} from 'react-router';
-import {Form, Button} from 'react-bootstrap';
+import {Form, Button, Row, Col} from 'react-bootstrap';
 
 const ListNft = () => {
   const [formParams, updateFormParams] = useState({ name: '', description: '', price: ''});
@@ -93,15 +93,17 @@ const ListNft = () => {
     <>
       <div>LIST A NFT</div>
       <div>
-        <Form>
-          <h3>Upload your NFT to the Marketplace.</h3>
-          <Form.Group>
-            <Form.Label>NFT Name</Form.Label>
-            <Form.Control id='name' type='text' placeholder='BAYC #7717' onChange={e => updateFormParams({...formParams, name: e.target.value})} value={formParams.name}/>
+      <h3>Upload your NFT to the Marketplace.</h3>
+        <Form style={{width: '300px'}}>
+          <Form.Group style={{border: '5px solid grey', padding: 5}} as={Row} controlId="name">
+            <Form.Label column sm={2}>NFT Name: </Form.Label>
+            <Col>
+              <Form.Control style={{fontSize: 12, padding: 3}} id='name' type='text' placeholder='BAYC #7717' onChange={e => updateFormParams({...formParams, name: e.target.value})} value={formParams.name}/>
+            </Col>
           </Form.Group>
         </Form>  
       </div>
-      <Button onClick={backHome}>Back to the top</Button>
+      <Button onClick={backHome} variant='secondary'>Back to the top</Button>
     </>
   )
 }
