@@ -3,6 +3,7 @@ import { uploadJSONToIPFS, uploadFileToIPFS } from './Pinata';
 import NFTMarketplace from '../NFTMarketplace.json';
 //import {useLocation} from 'react-router';
 import {Form, Button, Row, Col} from 'react-bootstrap';
+import {useSelector} from 'react-redux';
 
 const ListNft = () => {
   const [formParams, updateFormParams] = useState({ name: '', description: '', price: ''});
@@ -11,6 +12,8 @@ const ListNft = () => {
   const [message, updateMessage] = useState('');
   //const location = useLocation();
 
+  const state = useSelector((state) => state);
+  console.log("ListNFT State: ", state)
     //This function uploads the NFT image to IPFS
   async function OnChangeFile(e) {
     var file = e.target.files[0];

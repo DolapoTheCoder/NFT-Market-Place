@@ -4,10 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Provider} from 'react-redux';
-import configureStore from './reduxThings/store/configureStore';
-
-const store = configureStore();
+import { Provider } from 'react-redux';
+import store from './reduxThings/store/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
