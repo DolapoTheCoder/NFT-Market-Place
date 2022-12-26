@@ -8,6 +8,7 @@ const Profile = () => {
 
     return (
         <div>
+            <MenuBar/>
             <div>
                 Profile
             </div>
