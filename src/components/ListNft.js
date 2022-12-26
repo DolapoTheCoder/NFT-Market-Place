@@ -13,8 +13,9 @@ const ListNft = () => {
   //const location = useLocation();
 
   const state = useSelector((state) => state);
-  console.log("ListNFT State: ", state)
-    //This function uploads the NFT image to IPFS
+  console.log("ListNFT State: ", state.user)
+
+  //This function uploads the NFT image to IPFS
   async function OnChangeFile(e) {
     var file = e.target.files[0];
         //check for file extension
@@ -88,25 +89,30 @@ const ListNft = () => {
     }
   }
 
-  const backHome = () => {
-    //send page back to the top.
-  } 
 
   return (
     <>
       <div>LIST A NFT</div>
       <div>
       <h3>Upload your NFT to the Marketplace.</h3>
-        <Form style={{width: '300px'}}>
-          <Form.Group style={{border: '5px solid grey', padding: 5}} as={Row} controlId="name">
-            <Form.Label column sm={2}>NFT Name: </Form.Label>
-            <Col>
-              <Form.Control style={{fontSize: 12, padding: 3}} id='name' type='text' placeholder='BAYC #7717' onChange={e => updateFormParams({...formParams, name: e.target.value})} value={formParams.name}/>
-            </Col>
+        <Form style={{width: '500px'}}>
+          <div>
+          <Form.Group style={{border: '5px solid grey', padding: 5}} controlId="name">
+            <Form.Label column sm={2} style={{display: 'inline-block', width: '150px'}}>NFT Name: </Form.Label>
+            <Form.Control style={{width: '300px', display: 'inline-block'}} id='name' type='text' placeholder='BAYC #7717' onChange={e => updateFormParams({...formParams, name: e.target.value})} value={formParams.name}/>
+            <Form.Label column sm={2} style={{display: 'inline-block', width: '150px'}}>NFT Description: </Form.Label>
+            <Form.Control style={{width: '300px', display: 'inline-block'}} id='description' type='text' placeholder='Bored Ape Yacht Club' onChange={e => updateFormParams({...formParams, description: e.target.value})} value={formParams.description}/>
+            <Form.Label column sm={2} style={{display: 'inline-block', width: '150px'}}>Price (in ETH): </Form.Label>
+            <Form.Control style={{width: '300px', display: 'inline-block'}} id='description' type='number' step={0.01} placeholder='Min 0.01' onChange={e => updateFormParams({...formParams, price: e.target.value})} value={formParams.price}/>
+            <Form.Label column sm={2} style={{display: 'inline-block', width: '150px'}}>Upload Image: </Form.Label>
+            <Form.Control style={{width: '300px', display: 'inline-block'}} id='description' type='file' onChange={OnChangeFile}/>
+            <br></br>
+            <br></br>
+            <Button onClick={listNFT} variant='secondary'>List NFT</Button>
           </Form.Group>
-        </Form>  
+          </div>
+        </Form>
       </div>
-      <Button onClick={backHome} variant='secondary'>Back to the top</Button>
     </>
   )
 }
