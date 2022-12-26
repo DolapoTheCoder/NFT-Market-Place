@@ -9,22 +9,21 @@ const MenuBar = () => {
   //const [user, setUser] = useState('');
   const state = useSelector((state) => (state));
   
-  //setUser(state.user);
 
 
   return (
     <Navbar bg="dark" variant="dark">
         <Container>
-            <Navbar.Brand href="#home">
+            <Navbar.Brand href="/">
                 DeCentralHub Market Place
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
-                    <Nav.Link href="shop">Shop NFT's</Nav.Link>
+                    <Nav.Link href='/marketplace'>Shop NFT's</Nav.Link>
                     {state.user ? (
 
-                    <Nav.Link href='profile'>Profiile</Nav.Link>
+                    <Nav.Link href='/profile'>Profile</Nav.Link>
 
                     ) : (
 

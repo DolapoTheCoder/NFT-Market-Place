@@ -97,7 +97,7 @@ const ListNft = () => {
       <h3>Upload your NFT to the Marketplace.</h3>
         <Form style={{width: '500px'}}>
           <div>
-          <Form.Group style={{border: '5px solid grey', padding: 5}} controlId="name">
+          <Form.Group style={{border: '5px solid grey', padding: 5}}>
             <Form.Label column sm={2} style={{display: 'inline-block', width: '150px'}}>NFT Name: </Form.Label>
             <Form.Control style={{width: '300px', display: 'inline-block'}} id='name' type='text' placeholder='BAYC #7717' onChange={e => updateFormParams({...formParams, name: e.target.value})} value={formParams.name}/>
             <Form.Label column sm={2} style={{display: 'inline-block', width: '150px'}}>NFT Description: </Form.Label>

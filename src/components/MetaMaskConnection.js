@@ -13,7 +13,7 @@ const MetaMaskConnection = () => {
   const [balance, setBalance] = useState(0);
 
   const state = useSelector((state) => (state));
-  console.log('Store:', state);
+  console.log('Store:', state.user);
   const dispatch = useDispatch();
 
   const connectWallet = async () => {
@@ -33,7 +33,7 @@ const MetaMaskConnection = () => {
   return (
     <>
       { 
-        user
+        state.user
         ?
         (
           <>
