@@ -95,7 +95,7 @@ const ListNft = () => {
       <div>LIST A NFT</div>
       <div>
       <h3>Upload your NFT to the Marketplace.</h3>
-        <Form style={{width: '500px'}}>
+      <Form style={{width: '500px', margin: '0 auto'}}>
           <div>
           <Form.Group style={{border: '5px solid grey', padding: 5}}>
             <Form.Label column sm={2} style={{display: 'inline-block', width: '150px'}}>NFT Name: </Form.Label>
