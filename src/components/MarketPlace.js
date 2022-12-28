@@ -75,11 +75,11 @@ if(!dataFetched)
 return (
     <div>
         <MenuBar></MenuBar>
-        <div className="flex flex-col place-items-center mt-20">
+        <div style={{flex: 'flex-col', placeItems: 'center', marginTop: '5rem'}}>
             <div className="md:text-xl font-bold text-white">
                 Top NFTs
             </div>
-            <div className="flex mt-5 justify-between flex-wrap max-w-screen-xl text-center">
+            <div style={{flex:'flex', marginTop: '1.25rem', justifyContent: 'space-between', flexWrap: 'wrap', maxWidth: '1280px', textAlign: 'center'}}>
                 {data.map((value, index) => {
                     return <NFTTile data={value} key={index}></NFTTile>;
                 })}
