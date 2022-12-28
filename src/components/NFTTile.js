@@ -1,4 +1,3 @@
-import axie from "../tile.jpeg";
 import {
     BrowserRouter as Router,
     Link,
@@ -10,11 +9,11 @@ function NFTTile (data) {
     }
     return (
         <Link to={newTo}>
-        <div className="border-2 ml-12 mt-5 mb-12 flex flex-col items-center rounded-lg w-48 md:w-72 shadow-2xl">
-            <img src={data.data.image} alt="" className="w-72 h-80 rounded-lg object-cover" />
-            <div className= "text-white w-full p-2 bg-gradient-to-t from-[#454545] to-transparent rounded-lg pt-5 -mt-20">
-                <strong className="text-xl">{data.data.name}</strong>
-                <p className="display-inline">
+        <div style={{border: '2', marginLeft: '12', marginTop: '5', marginBottom: '12', flex: 'flex-col', alignItems: 'center', borderRadius: '0.5rem', width: '12rem', maxWidth: '72'}}>
+            <img src={data.data.image} alt="" style={{width: '130px', height: '150px', borderRadius: '0.5rem', objectFit: 'cover'}} />
+            <div style={{textColor: 'white', width: '100%', backgroundImage: 'linear-gradient(to top, var(--tw-gradient-stops))', borderRadius: '0.5rem', paddingTop: '1.25rem', marginTop: '5rem'}}>
+                <strong style={{fontSize: '1.25rem', lineHeight: '1.75rem'}}>{data.data.name}</strong>
+                <p style={{display: 'inline'}}>
                     {data.data.description}
                 </p>
             </div>
